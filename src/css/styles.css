@@ -204,3 +204,98 @@ main {
   font-size: 2rem;
   font-weight: bold;
 }
+
+.profile-repositories {
+  margin: 2rem auto;
+  max-width: 900px;
+  background: transparent;
+}
+
+.profile-repositories h2 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.repositories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.repository-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.repository-card {
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem 1.25rem;
+  min-width: 260px;
+  max-width: 320px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--background);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repository-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.repository-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  text-align: left;
+}
+
+.repository-card p {
+  font-size: var(--font-sm);
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  min-height: 3rem;
+}
+
+.repository-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.repository-stat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.75rem;
+  border-radius: 999px;
+  background: #f5f7fb;
+  color: var(--foreground);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.repository-card:hover .repository-stat {
+  background: #edeff8;
+}
+
+.repository-stats span {
+  font-size: var(--font-sm);
+  color: var(--muted-foreground);
+  background: #ececec;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
