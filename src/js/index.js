@@ -6,7 +6,7 @@ const btnSearch = document.getElementById('btn-search');
 const profileResults = document.getElementById('profile-results');
 
 const searchUser = async () => {
-    const userName = inputSearch.value;
+    const userName = inputSearch.value.trim();
     
     if (!userName) {
         alert('Por favor, digite um nome de usuário do GitHub.');

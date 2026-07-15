@@ -7,10 +7,10 @@ export function renderProfile(userData, userRepos, container) {
         following
     } = userData;
 
-    const repositoriesHTML = userRepos.length > 0 ? userRepos.map(repo => {
+    const repositoriesHTML = userRepos?.length > 0 ? userRepos.map(repo => {
             const {
                 html_url,
-                name,
+                name: repositoryName,
                 description,
                 stargazers_count,
                 forks_count,
@@ -19,15 +19,15 @@ export function renderProfile(userData, userRepos, container) {
             } = repo;
 
             return `
-                <a class="repository-link" href="${html_url}" target="_blank" rel="noreferrer">
+                <a class="repository-link" href="${html_url}" target="_blank" rel="noopener noreferrer">
                     <div class="repository-card">
-                        <h3>${name}</h3>
+                        <h3>${repositoryName}</h3>
                         <p>${description || "Sem descrição"}</p>
                         <div class="repository-stats">
                             <span class="repository-stat">⭐ ${stargazers_count}</span>
                             <span class="repository-stat">🍴 ${forks_count}</span>
                             <span class="repository-stat">👀 ${watchers_count}</span>
-                            <span class="repository-stat">📝 ${language || "N/A"}</span>
+                            <span class="repository-stat">📝 ${language || "Não informada"}</span>
                         </div>
                     </div>
                 </a>
