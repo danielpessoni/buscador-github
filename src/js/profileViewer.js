@@ -39,7 +39,7 @@ export function renderProfile(userData, userRepos, container) {
         <div class="profile-card">
             <img src="${avatar_url}" alt="Avatar de ${name}" class="profile-avatar">
             <div class="profile-info">
-                <h2>${name}</h2>
+                <h2>${name || 'Não possui nome cadastrado 😢'}</h2>
                 <p>${bio || 'Não possui bio cadastrada 😢.'}</p>
             </div>
         </div>
